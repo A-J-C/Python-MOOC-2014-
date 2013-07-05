@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <title>Video Attributes</title>
+  <script src="http://eligrey.com/demos/FileSaver.js/FileSaver.js" type="text/javascript"></script>
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+</head>
+ 
+<body>  
+  <div id="center"> 
+   <div class="panel">
+        <form name="input">
+          Video URL: <input type="text" id="videoURL">
+          <input type="button" value="Change Video" id="change"/>
+        </form>         
+   </div>          
+   <p class="slide">
+     <a class="pull-me">Set Video</a>
+   </p>
+	 
+   <video controls="controls" id="pythonVid" auutoplay="autoplay">
+     <source src="http://ia700806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_lec02_300k.mp4"/>
+     Your browser does not support the HTML5 video tag.
+	  </video>
+     
+    
+     
+  <div id ="links">
+	  <a href="javascript:speed(0.5)">0.5x</a>
+	  <a href="javascript:speed(1.0)">1x</a>
+	  <a href="javascript:speed(1.2)">1.25x</a>
+    <a href="javascript:speed(1.5)">1.5x</a>
+    <a href="javascript:speed(1.75)">1.75x</a>
+    <a href="javascript:speed(2.0)">2x</a>
+    <a href="javascript:speed(2.5)">2.5x</a>
+    <a href="javascript:speed(3.0)">3x</a>
+  </div>
+ 
+     <input type="text" placeholder="Input Desired Speed" id="speedInput" /><input type="submit" value="Change Speed" id="speedSubmit" />
+     
+   </div>
+    
+   <div id="left">
+     <p class="title"> Lectures </p>
+     <p><a href="javascript:setVid('http://ia600806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_lec01_300k.mp4')"> Lecture 1 </a> </p>
+     <p><a href="javascript:setVid('http://ia600806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_lec02_300k.mp4')"> Lecture 2 </a> </p>
+     <p><a href="javascript:setVid('http://ia700806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_lec03_300k.mp4')"> Lecture 3 </a> </p>
+     <p><a href="javascript:setVid('http://ia600806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_lec04_300k.mp4')"> Lecture 4 </a> </p>
+     <p><a href="javascript:setVid('http://ia700806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_lec05_300k.mp4')"> Lecture 5 </a> </p>
+     <p><a href="javascript:setVid('http://ia700806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_lec06_300k.mp4')"> Lecture 6 </a> </p>
+     <p><a href="javascript:setVid('http://ia700806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_lec07_300k.mp4')"> Lecture 7 </a> </p>
+     
+     <p class="title"> Recitation </p>
+     <div id="rec">
+      <p><a href="javascript:setVid('http://ia700806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_rec01_300k.mp4')"> Recitation  1 </a> </p>
+     <p><a href="javascript:setVid('http://ia700806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_rec02_300k.mp4')"> Recitation 2 </a> </p>
+     <p><a href="javascript:setVid('http://ia600806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_rec03_300k.mp4')"> Recitation 3 </a> </p>
+     <p><a href="javascript:setVid('http://ia600806.us.archive.org/25/items/MIT6.00SCS11/MIT6_00SCS11_rec04_300k.mp4')"> Recitation 4 </a> </p>
+     </div>
+    
+   </div>
+    
+ 
+    <div id="comments">     
+ 
+    <p class="paper" contenteditable >
+      MOOC:<br>
+   Add any comments here.<br>
+    <br>
+   Once done just as a file name above and you can save the notes to the download folder. Right now it is only tested in Chrome and a minimum screen size of 1024 x 600. Have a nice time. <br>
+</p>
+      
+      </div>
+      
+      <div id="name">
+  <input type="text" placeholder="File Name" id="nameInput" />
+ <button class="save-to-pc">Download</button>  
+      </div>
+      
+      <div id="materials">
+      <div id="readingMaterial" class="material">
+        <p> Reading Material </p>
+      </div>
+       <div id="tasks" class="material">
+        <p> Tasks </p>
+      </div>
+         <div id="cademy" class="material">
+        <p> CodeCademy </p>
+      </div>
+      </div>
+   <div id="reading" class="section">
+      <div id="weeks">
+        <div id="week1"> Week 1 </div>
+        <div id="week2"> Week 2 </div>
+        <div id="week3"> Week 3 </div>
+        <div id="week4"> Week 4 </div>
+        <div id="week5"> Week 5 </div>
+        <div id="week6"> Week 6 </div>
+        <div id="week7"> Week 7 </div>
+        <div id="week8"> Week 8 </div>
+      </div>
+    
+     <div id="readingM" class="section">
+     <div id ="back" class="invisible">
+       <p><a>Back</a></p></div>
+      <div id="week1m" class="invisible">
+       <p><a href=" http://www.greenteapress.com/thinkpython/thinkCSpy/html/preface.html"> Preface</a> </p> 
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap01.html"> Chapter 1</a> </p>
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap02.html"> Chapter 2</a> </p>
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap04.html#1 "> Chapter 4.1</a> </p>
+         <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap04.html#2 "> Chapter 4.2</a> </p>
+         <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap07.html#1 "> Chapter 7.1</a> </p>
+         <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap07.html#2 "> Chapter 7.2</a> </p>
+         <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap07.html#4 "> Chapter 7.4</a> </p>
+         <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap07.html#5 "> Chapter 7.6</a> </p>
+       
+     </div>
+       
+       <div id="week2m" class="invisible">
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap04.html#4"> Chapter 4.4 - 4.7</a> </p>
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap06.html#1"> Chapter 6.1 - 6.2</a> </p>
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap07.html#3 "> Chapter 7.3</a> </p>
+         <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap08.html#1 "> Chapter 8.1</a> </p>
+         <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap11.html "> Chapter 11 Intro</a> </p>
+       
+     </div>
+       
+       <div id="week3m" class="invisible">
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap03.html"> Chapter 3</a> </p>
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap06.html#5"> Chapter 6.5 - 6.9
+          </a> </p>
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap04.html#1 "> Chapter 4.1</a> </p>
+         <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/app01.html"> Apendix A - Debugging</a> </p>
+     </div>
+       
+       <div id="week4m" class="invisible">
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap07.html"> Chapter 7</a> </p>
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap08.html"> Chapter 8</a> </p>
+     </div>
+       
+       <div id="week5m" class="invisible">
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap09.html"> Chapter 9</a> </p>
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap10.html"> Chapter 10</a> </p>
+     </div>
+       
+       <div id="week6m" class="invisible">
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap12.html"> Chapter 12</a> </p>
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap13.html"> Chapter 13</a> </p>
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap14.html#1 "> Chapter 14</a> </p>
+     </div>
+       
+       <div id="week7m" class="invisible">
+        <p><a href="http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap16.html"> Chapter 16</a> </p>
+     </div>
+       
+       <div id="week8m" class="invisible">
+        <p> None </p>
+     </div>
+       
+     </div>
+     </div>
+    
+      
+    <div id="tasksMaterial">
+      <div id="tWeeks">
+        <div id="week0"> Week 0 </div>
+        <div id="week1"> Week 1 </div>
+        <div id="week2"> Week 2 </div>
+        <div id="week3"> Week 3 </div>
+        <div id="week4"> Week 4 </div>
+        <div id="week5"> Week 5 </div>
+        <div id="week6"> Week 6 </div>
+        <div id="week7"> Week 7 </div>
+        <div id="week8"> Week 8 </div>
+      </div>
+      <div id ="tasksM">
+        <div id ="tBack" class="invisible">
+       <p><a>Back</a></p></div>
+        
+        
+        <div id="tWeek0m" class="invisible">
+       <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/lectures/MIT6_189IAP11_start.pdf">Getting Started PDF </a> </p>
+           <p><a href="http://www.python.org/download/releases/2.6.6/"> Install Python </a> </p>
+           <p><a href="https://hkn.eecs.berkeley.edu/~dyoo/python/idle_intro/index.html"> One Day of IDLE Toying </a> </p>
+        </div>
+                
+        <div id="tWeek1m" class="invisible">
+       <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw1.pdf">Section 1.1 - 1.4</a> </p>
+           <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw1_written.pdf">Section 1.9 - 1.12</a> </p>
+        </div>
+                
+        <div id="tWeek2m" class="invisible">
+       <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw1.pdf"> Sections 1.5 - 1.8 and OPT Ex</a> </p>
+          <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw1_written.pdf"> Sections 1.13, 1.14 and 1.15</a> </p>
+        </div>
+                
+        <div id="tWeek3m" class="invisible">
+       <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw2.pdf">Sections 2.0 - 2.6 </a> </p>
+        </div>
+                
+        <div id="tWeek4m" class="invisible">
+       <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw2.pdf"> Sections 2.7 - 2.10 </a> </p>
+          <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw2_written.pdf"> Sections 2.11 and 2.12 </a> </p>
+        </div>
+                
+        <div id="tWeek5m" class="invisible">
+       <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw3.pdf">Sections 3.0 - 3.5 </a> </p> 
+       <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw3_written.pdf">Sections 3.7 - 3.9 </a> </p>
+        </div>
+                
+        <div id="tWeek6m" class="invisible">
+       <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw3.pdf"> Section 3.6 and OPT Ex. 1&2 </a> </p>
+          <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw3_written.pdf"> Section 3.10 and 3.11 </a> </p>
+          <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_project1.pdf"> Project 1 - Hangman </a> </p>
+        </div>
+                
+        <div id="tWeek7m" class="invisible">
+       <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw4.pdf"> Sections 4.1 - 4.3.2 </a> </p>
+           <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_hw4_written.pdf"> Sections 4.4 and 4.6 </a> </p>
+           <p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/assignments/MIT6_189IAP11_project2.pdf"> Project 2 – Conway’s game of life </a> </p>
+        </div>
+        
+        
+        
+        
+      </div>
+    </div>
+      
+    <div id="cademyMaterial">
+      <div id="cWeeks">
+        <div id="week1"> Week 1 </div>
+        <div id="week2"> Week 2 </div>
+        <div id="week3"> Week 3 </div>
+        <div id="week4"> Week 4 </div>
+        <div id="week5"> Week 5 </div>
+        <div id="week6"> Week 6 </div>
+        <div id="week7"> Week 7 </div>
+        <div id="week8"> Week 8 </div>
+      </div>
+      <div id="cademyM">
+        <div id ="cBack" class="invisible">
+       <p><a>Back</a></p></div>
+        
+        <div id="cWeek1m" class="invisible">
+       <p><a href="http://www.codecademy.com/tracks/python"> Python Units 1 and 2 </a> </p>
+        </div>
+          <div id="cWeek2m" class="invisible">
+       <p><a href="http://www.codecademy.com/tracks/python"> Python Unit 3 </a> </p>
+        </div>
+          <div id="cWeek3m" class="invisible">
+       <p><a href="http://www.codecademy.com/tracks/python"> Python Unit 4 </a> </p>
+        </div>
+          <div id="cWeek4m" class="invisible">
+       <p><a href="http://www.codecademy.com/tracks/python"> Python Units 5, 6 and 7 </a> </p>
+        </div>
+          <div id="cWeek5m" class="invisible">
+       <p><a href="http://www.codecademy.com/tracks/python"> Python Units 8 and 9 </a> </p>
+        </div>
+          <div id="cWeek6m" class="invisible">
+       <p><a href="http://www.codecademy.com/tracks/python"> Python Units 10 and 11 </a> </p>
+        </div>
+          <div id="cWeek7m" class="invisible">
+       <p> None </p>
+        </div>
+          <div id="cWeek8m" class="invisible">
+       <p><a href="http://www.codecademy.com/tracks/python"> Python Unit 12 </a> </p>
+        </div>
+        
+      </div>
+    </div>
+      
+      
+   <div id="warning">
+       <p> Hello </p>
+       <p> Your screen is to small to use this site. <p>
+         <p> It needs to be a minimum of 1024 x 600. </p>
+         <p> Sorry about that. </p>
+     </div>
+  
+  </body>
+</html>
+
+<script>
+function speed(x){
+  var myVid=document.getElementById("pythonVid");
+	myVid.playbackRate=x;
+	$('#pbrate').html(x);
+}
+ 
+function setVid(x) {
+ var myVid = document.getElementById('pythonVid');
+ 
+ $(myVid).attr('src', x);
+  
+}
+ 
+$(document).ready(function(){
+  $(".invisible").hide();
+  
+  $("#warning").hide();
+    var winW = $(window).width();
+    var winH = $(window).height();
+  
+ $("#materials").css("margin-left",((winW*0.85)-70));
+  
+  if(winH<550 || winW<950){
+  $("#warning").show();
+ $("div:not(#warning)").fadeTo(2000,0.05);
+ }
+  
+  if(winH<=650){
+  $("#rec").css("font-size","14px");
+  $("#center video").css("height","75%").css("width","75%");
+  }else if(winH<=770){
+  $("#rec").css("font-size","14px");
+  }
+  else{
+  $("#rec").css("font-size","16px");
+  $("#center video").css("height","100%").css("width","100%");
+  }
+  
+ $('body').append("<div id='spacer'> </div>");
+  
+    $('.pull-me').click(function() {
+    $('.panel').slideToggle('slow'); 
+    });
+  
+   $('#change').click(function() {         
+     setVid($("#videoURL").val());
+    }); 
+  
+  $("#speedSubmit").click(function(){
+   if (!isNaN(parseFloat($("#speedInput").val(),10))) {
+     speed(parseFloat($("#speedInput").val(),10));
+   } else {
+     alert("Please input a number.")
+   }
+   $("#speedInput").val("").focus()
+  });
+  
+  $('#speedInput').bind("enterKey",function(e){
+    $("#speedSubmit").click()
+  });
+  $('#speedInput').keyup(function(e){
+  if(e.keyCode == 13)
+  {
+    $(this).trigger("enterKey");
+  }
+  });
+  
+   
+  $(".save-to-pc").click(function(){
+    var name = $("#nameInput").val();
+    var blob = new Blob([$("p.paper").text()], {type: "text/plain;charset=utf-8"});
+saveAs(blob, (name+".txt"));
+});
+  
+var i = 1;
+  
+    $("#readingMaterial").click(function(){
+      
+      i++;
+      if(i%2==0){
+        $("#comments").animate({height:"50%"},500);
+        $("#reading").animate({height:"50%"},500);
+        $(this).html("Hide Material");
+         $("#readingM div").removeClass("visible").addClass("invisible");
+    $(".invisible").hide();
+    $("#weeks").show().animate({marginLeft:"0px"},200);
+      }
+      else{
+      $("#comments").animate({height:"100%"},500);
+      $("#reading").animate({height:"0px"},500);
+      $(this).html("Reading Material");
+      }
+    });
+  
+  $("#weeks div").click(function(){
+    $("#weeks").animate({marginLeft:"-=100%"},200,function() {
+            $("#weeks").hide();
+        });
+    
+     var week = ""; 
+    
+     if($(this).is('#week1')){week="#week1m";}
+     if($(this).is('#week2')){week="#week2m";}
+     if($(this).is('#week3')){week="#week3m";}
+     if($(this).is('#week4')){week="#week4m";}
+     if($(this).is('#week5')){week="#week5m";}
+     if($(this).is('#week6')){week="#week6m";}
+     if($(this).is('#week7')){week="#week7m";}
+     if($(this).is('#week8')){week="#week8m";}
+    
+   $(week).removeClass("invisible").addClass("visible")
+     $("#back").addClass("visible").removeClass("invisible");
+    $(".visible").show();
+    $(".invisible").hide();
+  
+  });
+  
+  $("#back").click(function(){
+    $("#readingM div").removeClass("visible").addClass("invisible");
+    $(".invisible").hide();
+    $("#weeks").show().animate({marginLeft:"0px"},200);
+  });
+  
+  var a = 1;
+  
+    $("#tasks").click(function(){
+      
+      a++;
+      if(a%2==0){
+        $("#comments").animate({height:"50%"},500);
+        $("#tasksMaterial").animate({height:"50%"},500);
+        $(this).html("Hide Tasks");
+        $("#tasksM div").removeClass("visible").addClass("invisible");
+    $(".invisible").hide();
+    $("#tWeeks").show().animate({marginLeft:"0px"},200);
+      }
+      else{
+      $("#comments").animate({height:"100%"},500);
+      $("#tasksMaterial").animate({height:"0px"},500);
+      $(this).html("Tasks");
+      }
+    });
+  
+    $("#tWeeks div").click(function(){
+    $("#tWeeks").animate({marginLeft:"-=100%"},200,function() {
+            $("#tWeeks").hide();
+        });
+    
+     var week = ""; 
+    
+     if($(this).is('#week0')){week="#tWeek0m";}
+     if($(this).is('#week1')){week="#tWeek1m";}
+     if($(this).is('#week2')){week="#tWeek2m";}
+     if($(this).is('#week3')){week="#tWeek3m";}
+     if($(this).is('#week4')){week="#tWeek4m";}
+     if($(this).is('#week5')){week="#tWeek5m";}
+     if($(this).is('#week6')){week="#tWeek6m";}
+     if($(this).is('#week7')){week="#tWeek7m";}
+     if($(this).is('#week8')){week="#tWeek8m";}
+    
+   $(week).removeClass("invisible").addClass("visible")
+     $("#tBack").addClass("visible").removeClass("invisible");
+    $(".visible").show();
+    $(".invisible").hide();
+  
+  });
+  
+  $("#tBack").click(function(){
+    $("#tasksM div").removeClass("visible").addClass("invisible");
+    $(".invisible").hide();
+    $("#tWeeks").show().animate({marginLeft:"0px"},200);
+  });
+  
+    var b = 1;
+  
+    $("#cademy").click(function(){
+     
+      b++;
+      if(b%2==0){
+        $("#comments").animate({height:"50%"},500);
+        $("#cademyMaterial").animate({height:"50%"},500);
+        $(this).html("Hide CodeCademy");
+        $("#cademyM div").removeClass("visible").addClass("invisible");
+    $(".invisible").hide();
+    $("#cWeeks").show().animate({marginLeft:"0px"},200);
+      }
+      else{
+      $("#comments").animate({height:"100%"},500);
+      $("#cademyMaterial").animate({height:"0px"},500);
+      $(this).html("CodeCademy");
+      }
+    });
+  
+  $("#cWeeks div").click(function(){
+    $("#cWeeks").animate({marginLeft:"-=100%"},200,function() {
+            $("#cWeeks").hide();
+        });
+    
+     var week = ""; 
+    
+     if($(this).is('#week1')){week="#cWeek1m";}
+     if($(this).is('#week2')){week="#cWeek2m";}
+     if($(this).is('#week3')){week="#cWeek3m";}
+     if($(this).is('#week4')){week="#cWeek4m";}
+     if($(this).is('#week5')){week="#cWeek5m";}
+     if($(this).is('#week6')){week="#cWeek6m";}
+     if($(this).is('#week7')){week="#cWeek7m";}
+     if($(this).is('#week8')){week="#cWeek8m";}
+    
+   $(week).removeClass("invisible").addClass("visible")
+     $("#cBack").addClass("visible").removeClass("invisible");
+    $(".visible").show();
+    $(".invisible").hide();
+  
+  });
+  
+  $("#cBack").click(function(){
+    $("#cademyM div").removeClass("visible").addClass("invisible");
+    $(".invisible").hide();
+    $("#cWeeks").show().animate({marginLeft:"0px"},200);
+  });
+  
+             
+});
+</script>
+
+<style>
+body {
+background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+text-align:center;
+  height:100%;
+  overflow-y:scroll;
+}
+a {
+  text-decoration:none;
+  color:#DBDBDB;
+  padding:5px;
+}
+a:hover{
+    box-shadow: 0 0 8px #FFD700;
+    cursor:pointer;
+}
+form{
+  background:#D6D0D2;
+  color:#5C5759;
+  width:200px;
+  margin:-25px;
+  margin-left:225px;
+  border-radius:10px;
+}
+video{
+ height:100%;
+  width:100%;
+}
+ 
+#change{
+  background:#E6EDED;
+  border-radius:5px;
+}
+#change:hover{
+  background:#37F087;
+  color:#0D2763;
+  border-radius:5px;
+}
+#links{
+  margin-left:50px;
+  font-weight:bold;
+}
+#center{
+  position: fixed;
+  left: 50%;
+  margin-top: 50px;
+  margin-left: -400px;
+}
+#videoURL{
+  background:#9C9899;
+  color:#5C5759;
+  border-radius:5px;
+}
+ 
+.panel {
+  height:100px;
+  width:100px;
+	display:none;
+}
+.pull-me {
+	display:block;
+  position:relative;
+  right:250px;
+  width:150px;
+  height:20px;
+	font-family:arial,sans-serif;
+  font-size:14px;
+	color:#ffffff;
+  background:#636061;
+  -moz-border-bottom-left-radius:5px;
+  -moz-border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  margin-left:500px;
+}
+ 
+#left{
+ 
+  height:100%;
+  width:7.5%;
+ background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+  color:white;
+  text-align: centre;
+  float:left;
+  border-radius:10px;
+}
+ 
+.title {
+text-decoration:underline;
+font-weight:bold;
+  padding:5px;
+}
+ 
+#comments{
+  overflow-y: scroll;
+  position: fixed;
+  height:100%;
+  top: 0px;
+  width:15%;
+  background:white;
+  margin-left:85%;
+	/* gradients - second red border, first red border, top white space, blue lines */
+    background-image:  -webkit-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -webkit-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -webkit-linear-gradient(top, white 0px, white 69px, rgba(255,255,255,0) 70px), -webkit-repeating-linear-gradient(white 0px, white 18px, #A6FFED 19px, white 20px);
+    background-image:  -moz-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -moz-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -moz-linear-gradient(top, white 0px, white 69px, rgba(255,255,255,0) 70px), -moz-repeating-linear-gradient(white 0px, white 18px, #A6FFED 19px, white 20px);
+    background-image:  -ms-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -ms-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -ms-linear-gradient(top, white 0px, white 69px, rgba(255,255,255,0) 70px), -ms-repeating-linear-gradient(white 0px, white 18px, #A6FFED 19px, white 20px);
+    background-image:  -o-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -o-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -o-linear-gradient(top, white 0px, white 69px, rgba(255,255,255,0) 70px), -o-repeating-linear-gradient(white 0px, white 18px, #A6FFED 19px, white 20px);
+    background-image:  linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), linear-gradient(top, white 0px, white 69px, rgba(255,255,255,0) 70px), repeating-linear-gradient(white 0px, white 18px, #A6FFED 19px, white 20px);
+    background-size: 1px, 1px, auto, auto 20px;
+    background-repeat: repeat-y, repeat-y, no-repeat, repeat;
+    background-position: 90% 0px, 10% 0px, 0px 0px, 0px 0px;
+}
+ 
+.paper {
+	margin: 0;
+    display: block;
+    font: 10pt Arial, sans-serif;    
+    line-height: 20px;
+    padding-top: 50px;
+    padding-left: 10.5%;
+    padding-right: 10.5%;
+    text-align: justify;
+}
+.paper:first-line {
+    font: 20pt Arial, sans-serif;
+    line-height: 33px;
+    vertical-align: baseline;
+}
+.paper:after {    
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    background: rgba(255,255,255,1);
+    top: 40px;
+    left: 2%;
+    z-index: 10;
+    -webkit-box-shadow: 
+        inset 2px 2px 5px rgba(125,125,125,1),  
+        2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
+        2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
+        2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
+    -moz-box-shadow: 
+        inset 2px 2px 5px rgba(125,125,125,1),  
+        2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
+        2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
+        2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
+    box-shadow: 
+        inset 2px 2px 5px rgba(125,125,125,1),  
+        2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
+        2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
+        2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
+}
+ 
+.paper:focus {
+    outline: none;
+}
+ 
+#name{
+  position:fixed;
+  top:0;
+  margin-left:85%;
+  width:15%;
+}
+ 
+#materials div{
+  -webkit-transform: rotate(-90deg); 
+  position:fixed;
+  height:20px;
+  width:120px;
+	font-family:arial,sans-serif;
+  font-size:14px;
+	color:#ffffff;
+  background:#636061;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+}
+#readingMaterial{
+  bottom:50px;
+}
+#tasks{
+  bottom:175px;
+}
+#cademy{
+  bottom:300px;
+}
+.material p{
+  margin:0px;
+}
+.material:hover{
+  box-shadow : 0 0 8px #FF5721;
+  cursor:pointer;
+}
+ 
+#warning{
+  background:#CD5555;
+  border-radius:20px;
+  border: 10px solid #B0A6A4;
+  color:white; 
+  width:50%;
+  height:50%; 
+  margin:25%;
+}
+ 
+#reading,#tasksMaterial,#cademyMaterial{
+  position:fixed;
+  width:15%;
+  height:0%;
+	font-family:arial,sans-serif;
+  font-size:14px;
+	color:#ffffff;
+  background-image:url("http://i41.tinypic.com/wb435w.jpg");
+  bottom:0;
+  margin-left:85%%;
+  overflow-y: scroll;
+}
+#tasksMaterial{
+  background-image:url("http://i44.tinypic.com/2ms0v8m.png");
+}
+#cademyMaterial{
+  background-image:url("http://i40.tinypic.com/2zrpy7t.png");
+}
+#weeks div, #tWeeks div, #cWeeks div{
+  margin:24px;
+}
+#weeks div:hover, #tWeeks div:hover, #cWeeks div:hover{
+  cursor:pointer;
+  color:gold;
+}
+#reading #readingM p,#tasksMaterial #tasksM p,#cademyMaterial #cademyM p{
+  margin:24px;
+}
+#spacer{
+ 
+}
+</style>
