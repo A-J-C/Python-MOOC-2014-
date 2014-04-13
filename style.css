@@ -1,0 +1,292 @@
+body {
+/* Gives the carbon background effect */
+background: radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+  text-align: center;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+a { /* Gives all links a padding and colour */
+  text-decoration: none;
+  color: #DBDBDB;
+  padding: 5px;
+}
+
+a:hover { /* A coloured shadow when hovering over links */
+  box-shadow: 0 0 8px #FFD700;
+  cursor: pointer;
+}
+
+form{ /* Styling for the drop down change-video form */
+  background:#3E3E40;
+  color:#FFFFFF;
+  width:200px;
+  margin:-25px;
+  margin-left:225px;
+  border-radius:10px;
+}
+
+video { /* Video Properties */
+  height: 100%;
+  width: 100%;
+}
+
+#warningBox { /* The warning boxes properties */
+  position:relative;
+  background: #CD5555;
+  border-radius: 20px;
+  border: 10px solid #B0A6A4;
+  color: white;
+  width: 50%;
+  height: 50%;
+  margin: 25%;
+}
+
+#center { /* Sets everything in the centre of the screen */
+  position: fixed;
+  left: 50%;
+  margin-top: 50px;
+  margin-left: -400px;
+}
+
+.changeVideoPanel { /* The drop down panels properties */
+  height: 100px;
+  width: 100px;
+  display: none;
+}
+
+.slider { /* The slider for change-video form */
+  display: block;
+  position: relative;
+  right: 250px;
+  width: 150px;
+  height: 20px;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background: #636061;
+  -moz-border-bottom-left-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: 500px;
+}
+
+#videoURL { /* Changes colour of videoURL input box */
+  background: #ffffff;
+  color: #000000;
+  border-radius: 5px;
+}
+
+#changeButton { /* The change button's properties */
+  background: #E6EDED;
+  border-radius: 5px;
+}
+
+#changeButton:hover { /* Change button when hovering */
+  background: #f0ffff;
+  color: #0D2763;
+  border-radius: 5px;
+}
+
+#pbRate{ /* Gives current playback rate */
+  color:white;
+  font-size:12px;
+}
+
+#speedLinks { /* Gives all the speed links a margin */
+  margin-left: 0px;
+  font-weight: bold;
+}
+
+#left { /* Properties of the left menu */
+  height: 100%;
+  width: 7.5%;
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+  color: white;
+  text-align: centre;
+  float: left;
+  border-radius: 10px;
+}
+
+.videoTitle { /* Properties for titles in the left hand menu */
+  text-decoration: underline;
+  font-weight: bold;
+  padding: 5px;
+}
+
+#comments { /* The notes section of the site */
+  overflow-y: scroll;
+  position: fixed;
+  height: 100%;
+  top: 0px;
+  width: 15%;
+  background: white;
+  margin-left: 85%;
+	/* gradients - second red border, first red border, top white space, blue lines */
+  background-image: -webkit-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -webkit-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -webkit-linear-gradient(top, white 0px, white 69px, rgba(255,255,255,0) 70px), -webkit-repeating-linear-gradient(white 0px, white 18px, #A6FFED 19px, white 20px);
+  background-image: -moz-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -moz-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -moz-linear-gradient(top, white 0px, white 69px, rgba(255,255,255,0) 70px), -moz-repeating-linear-gradient(white 0px, white 18px, #A6FFED 19px, white 20px);
+  background-image: -ms-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -ms-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -ms-linear-gradient(top, white 0px, white 69px, rgba(255,255,255,0) 70px), -ms-repeating-linear-gradient(white 0px, white 18px, #A6FFED 19px, white 20px);
+  background-image: -o-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -o-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -o-linear-gradient(top, white 0px, white 69px, rgba(255,255,255,0) 70px), -o-repeating-linear-gradient(white 0px, white 18px, #A6FFED 19px, white 20px);
+  background-image: linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), linear-gradient(top, white 0px, white 69px, rgba(255,255,255,0) 70px), repeating-linear-gradient(white 0px, white 18px, #A6FFED 19px, white 20px);
+  background-size: 1px, 1px, auto, auto 20px;
+  background-repeat: repeat-y, repeat-y, no-repeat, repeat;
+  background-position: 90% 0px, 10% 0px, 0px 0px, 0px 0px;
+}
+
+#nameInputBox { /* The file name input box */
+  position: fixed;
+  top: 0;
+  margin-left: 85%;
+  width: 15%;
+}
+
+.paper { /* Gives the paper area properties */
+  margin: 0;
+  display: block;
+  font: 10pt Arial, sans-serif;
+  line-height: 20px;
+  padding-top: 50px;
+  padding-left: 10.5%;
+  padding-right: 10.5%;
+  text-align: justify;
+}
+
+.paper:first-line { /* Makes the first line of notes bigger */
+  font: 20pt Arial, sans-serif;
+  line-height: 33px;
+  vertical-align: baseline;
+}
+
+.paper:after { /* Properties for all other lines of the notes */
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  position: absolute;
+  background: rgba(255,255,255,1);
+  top: 40px;
+  left: 2%;
+  z-index: 10;
+  -webkit-box-shadow: inset 2px 2px 5px rgba(125,125,125,1),  
+        2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
+        2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
+        2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
+  -moz-box-shadow: inset 2px 2px 5px rgba(125,125,125,1),  
+        2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
+        2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
+        2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
+  box-shadow: inset 2px 2px 5px rgba(125,125,125,1),  
+        2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
+        2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
+        2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
+}
+
+.paper:focus { /* Removes outline when clicked on */
+  outline: none;
+}
+
+#materials div { /* Properties of materials in bottom right */
+  -webkit-transform: rotate(-90deg);
+  position: fixed;
+  height: 20px;
+  width: 120px;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background: #636061;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* The following is styling everything in the slider menus on the bottom right*/
+#readingsTitle {
+  bottom: 50px;
+}
+
+#tasksTitle {
+  bottom: 175px;
+}
+
+#codecademyTitle {
+  bottom: 300px;
+}
+
+.tabTitle p {
+  margin: 0px;
+}
+
+.tabTitle:hover {
+  box-shadow: 0 0 8px #FF5721;
+  cursor: pointer;
+}
+
+#readings,#tasks,#codecademy {
+  position: fixed;
+  width: 15%;
+  height: 0%;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background-image: url("http://i41.tinypic.com/wb435w.jpg");
+  bottom: 0;
+  margin-left: 85%%;
+  overflow-y: scroll;
+}
+
+#tasks {
+  background-image: url("http://i44.tinypic.com/2ms0v8m.png");
+}
+
+#codecademy {
+  background-image: url("http://i40.tinypic.com/2zrpy7t.png");
+}
+
+#weeksR div, #weeksT div, #weeksC div {
+  margin: 24px;
+}
+
+#weeksR div:hover, #weeksT div:hover, #weeksC div:hover {
+  cursor: pointer;
+  color: gold;
+}
+
+#readings #readingsM p,#tasks #tasksM p,#codecademy #codecademyM p {
+  margin: 24px;
+}
+
+/* Styling for the footer, making sure it is always at the bottom etc. */
+.footer{
+  position: absolute;
+  bottom: 0;
+  left : 0px;
+  font-family: 'Gotham SSm A', sans-serif;
+  font-size: 0.8em;
+  padding: 3px 8px;
+  float: none;
+  height: 20px;
+  width: 10%;
+  display: inline-block;
+  background: linear-gradient(#4d4d4d, #2f2f2f);
+  border-radius: 5px;
+  border: 1px solid black;
+  color: white !important;
+  white-space: nowrap;
+  text-decoration: none !important;
+  cursor: pointer;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
